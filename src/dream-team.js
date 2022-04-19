@@ -21,3 +21,29 @@ function createDreamTeam(/* members */) {
 module.exports = {
   createDreamTeam
 };
+
+
+
+function createDreamTeam(arr){
+  if(Array.isArray(arr)){
+    const newArr = [];
+
+    arr.map(index => {
+      if(typeof(index) === 'string'){
+        newArr.push(index.trim());
+      }
+    });
+
+    if(newArr.length === 0){
+      console.log('false');
+      return false;
+    }
+
+    const nameOfSuperDuperTeamOfTheWholeWorld = newArr.map(index => index[0].toUpperCase()).sort().join('');
+
+    return nameOfSuperDuperTeamOfTheWholeWorld;
+
+  }else{
+    return false;
+  }
+}
