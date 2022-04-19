@@ -22,3 +22,15 @@ function countCats(/* matrix */) {
 module.exports = {
   countCats
 };
+
+function countCats(arr){
+  const mergedArr = [].concat(...arr);
+  let count = 0;
+
+  mergedArr.map((index) => {
+    if(index === '^^'){
+      count +=1;
+    }
+  });
+  return count;
+}
