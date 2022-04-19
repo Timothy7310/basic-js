@@ -25,3 +25,49 @@ function dateSample(/* sampleActivity */) {
 module.exports = {
   dateSample
 };
+
+
+// function dateSample(sampleActivity){
+
+//   sampleActivity = +sampleActivity;
+
+//   if(isNaN(+sampleActivity)){
+//     return false;
+//   } else {
+//     sampleActivity = +sampleActivity;
+//   }
+//   console.log(typeof(sampleActivity));
+  
+
+//   const k = Math.log(2) / HALF_LIFE_PERIOD;
+
+//   const x = Math.log(MODERN_ACTIVITY / sampleActivity);
+
+//   const result = Math.ceil(x / k);
+ 
+//   // return result;
+//   console.log(result);
+
+
+  
+// };
+
+function dateSample(sampleActivity){
+  if(typeof(sampleActivity) === 'string'){
+    
+    if(isNaN(+sampleActivity) || sampleActivity.length === 0 || +sampleActivity === 0 || +sampleActivity < 0 || sampleActivity > MODERN_ACTIVITY){
+      return false;
+    } else {
+      sampleActivity = +sampleActivity;
+
+      const k = Math.log(2) / HALF_LIFE_PERIOD;
+      const x = Math.log(MODERN_ACTIVITY / sampleActivity);
+      const result = Math.ceil(x / k);
+      return result;
+    }
+  }else{
+    return false;
+  }
+}
+
+
