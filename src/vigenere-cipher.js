@@ -1,4 +1,6 @@
-const { NotImplementedError } = require('../extensions/index.js');
+const {
+  NotImplementedError
+} = require('../extensions/index.js');
 
 /**
  * Implement class VigenereCipheringMachine that allows us to create
@@ -20,16 +22,31 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 class VigenereCipheringMachine {
-  encrypt() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+
+  constructor() {
+    this.alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    this.square = [];
   }
-  decrypt() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  errorFunc(message, key) {
+    if (!message || !key) {
+      throw new Error('Incorrect arguments!');
+    }
+  }
+
+
+  encrypt(message, key) {
+    this.errorFunc(message, key);
+  }
+  decrypt(message, key) {
+    this.errorFunc(message, key);
   }
 }
 
 module.exports = {
   VigenereCipheringMachine
 };
+
+
+// const directMachine = new VigenereCipheringMachine();
+
+// directMachine.decrypt(undefined, 'alphonse');
